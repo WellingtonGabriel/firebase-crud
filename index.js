@@ -28,6 +28,7 @@ import {
         tasksContainer.innerHTML += `
         <div class="card card-body mt-2 border-primary">
       <p>${task.nome}</p>
+      <p>${task.sexo}</p>
       <p>${task.email}</p>
       <p>${task.telefone}</p>
       <p>${task.endereco}</p>
@@ -63,6 +64,7 @@ import {
             const doc = await getTask(e.target.dataset.id);
             const task = doc.data();
             taskForm["task-nome"].value = task.nome;
+            taskForm["task-sexo"].value = task.sexo;
             taskForm["task-email"].value = task.email;
             taskForm["task-telefone"].value = task.telefone;
             taskForm["task-endereco"].value = task.endereco;
@@ -85,6 +87,7 @@ import {
     e.preventDefault();
   
     const nome = taskForm["task-nome"];
+    const sexo = taskForm["task-sexo"];
     const email = taskForm["task-email"]
     const telefone = taskForm["task-telefone"]
     const endereco = taskForm["task-endereco"]
@@ -94,10 +97,11 @@ import {
   
     try {
       if (!editStatus) {
-        await saveTask(nome.value,email.value,telefone.value,endereco.value,numero.value,cep.value,complemento.value);
+        await saveTask(nome.value,sexo.value,email.value,telefone.value,endereco.value,numero.value,cep.value,complemento.value);
       } else {
         await updateTask(id, {
           nome: nome.value,
+          sexo: sexo.value,
           email: email.value,
           telefone: telefone.value,
           endereco: endereco.value,
