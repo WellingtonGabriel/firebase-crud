@@ -33,11 +33,11 @@ export const db = getFirestore();
 
 /**
  * Save a New Task in Firestore
- * @param {string} title the title of the Task
- * @param {string} description the description of the Task
+ * @param {string} nome the nome of the Task
+ * @param {string} sobrenome the sobrenome of the Task
  */
-export const saveTask = (title, description) =>
-  addDoc(collection(db, "tasks"), { title, description });
+export const saveTask = (nome,email,telefone,endereco,numero,cep,complemento) =>
+  addDoc(collection(db, "tasks"), { nome,email,telefone,endereco,numero,cep,complemento });
 
 export const onGetTasks = (callback) =>
   onSnapshot(collection(db, "tasks"), callback);

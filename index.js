@@ -27,14 +27,19 @@ import {
   
         tasksContainer.innerHTML += `
         <div class="card card-body mt-2 border-primary">
-      <h3 class="h5">${task.title}</h3>
-      <p>${task.description}</p>
+      <p>${task.nome}</p>
+      <p>${task.email}</p>
+      <p>${task.telefone}</p>
+      <p>${task.endereco}</p>
+      <p>${task.numero}</p>
+      <p>${task.cep}</p>
+      <p>${task.complemento}</p>
       <div>
         <button class="btn btn-primary btn-delete" data-id="${doc.id}">
-          🗑 Delete
+          🗑 Deletar
         </button>
         <button class="btn btn-secondary btn-edit" data-id="${doc.id}">
-          🖉 Edit
+          🖉 Editar
         </button>
       </div>
     </div>`;
@@ -57,8 +62,13 @@ import {
           try {
             const doc = await getTask(e.target.dataset.id);
             const task = doc.data();
-            taskForm["task-title"].value = task.title;
-            taskForm["task-description"].value = task.description;
+            taskForm["task-nome"].value = task.nome;
+            taskForm["task-email"].value = task.email;
+            taskForm["task-telefone"].value = task.telefone;
+            taskForm["task-endereco"].value = task.endereco;
+            taskForm["task-numero"].value = task.numero;
+            taskForm["task-cep"].value = task.cep;
+            taskForm["task-complemento"].value = task.complemento;
   
             editStatus = true;
             id = doc.id;
@@ -74,21 +84,31 @@ import {
   taskForm.addEventListener("submit", async (e) => {
     e.preventDefault();
   
-    const title = taskForm["task-title"];
-    const description = taskForm["task-description"];
+    const nome = taskForm["task-nome"];
+    const email = taskForm["task-email"]
+    const telefone = taskForm["task-telefone"]
+    const endereco = taskForm["task-endereco"]
+    const numero = taskForm["task-numero"]
+    const cep = taskForm["task-cep"]
+    const complemento = taskForm["task-complemento"]
   
     try {
       if (!editStatus) {
-        await saveTask(title.value, description.value);
+        await saveTask(nome.value,email.value,telefone.value,endereco.value,numero.value,cep.value,complemento.value);
       } else {
         await updateTask(id, {
-          title: title.value,
-          description: description.value,
+          nome: nome.value,
+          email: email.value,
+          telefone: telefone.value,
+          endereco: endereco.value,
+          numero: numero.value,
+          cep: cep.value,
+          complemento: complemento.value,
         });
   
         editStatus = false;
         id = "";
-        taskForm["btn-task-form"].innerText = "Save";
+        taskForm["btn-task-form"].innerText = "save";
       }
   
       taskForm.reset();

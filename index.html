@@ -15,34 +15,86 @@
   </head>
 
   <body class="bg-dark">
-    <!-- ADD TASK -->
+    <!-- Formulário -->
     <div class="container p-4">
       <div class="row">
         <div class="col-md-6">
           <div class="card">
             <div class="card-body">
-              <h1 class="h4">Add Task</h1>
+              <h1 class="h4">Formulário</h1>
 
               <form id="task-form">
-                <label for="title">Title:</label>
+                <label for="nome">Nome :</label>
                 <input
                   type="text"
-                  id="task-title"
+                  id="task-nome"
                   class="form-control mb-3"
-                  class="My First Title"
-                  placeholder="Task Title"
+                  class="My First nome"
+                  placeholder="nome"
+                  autofocus
+                />
+                 
+                <label for="email">E-mail :</label>
+                <input
+                  type="text"
+                  id="task-email"
+                  class="form-control mb-4"
+                  class="My First email"
+                  placeholder="e-mail"
                   autofocus
                 />
 
-                <label for="description">Description:</label>
-                <textarea
-                  id="task-description"
-                  rows="3"
-                  class="form-control mb-3"
-                  placeholder="Task Description"
-                ></textarea>
+                <label for="telefone">Telefone :</label>
+                <input
+                  type="text"
+                  id="task-telefone"
+                  class="form-control mb-4"
+                  class="My First telefone"
+                  placeholder="telefone"
+                  autofocus
+                />
 
-                <button class="btn btn-primary" id="btn-task-form">Save</button>
+                <label for="endereco">Endereço :</label>
+                <input
+                  type="text"
+                  id="task-endereco"
+                  class="form-control mb-4"
+                  class="My First endereco"
+                  placeholder="endereço"
+                  autofocus
+                />
+
+                <label for="numero">Numero :</label>
+                <input
+                  type="text"
+                  id="task-numero"
+                  class="form-control mb-4"
+                  class="My First numero"
+                  placeholder="numero"
+                  autofocus
+                />
+
+                <label for="cep">Cep :</label>
+                <input
+                  type="text"
+                  id="task-cep"
+                  class="form-control mb-4"
+                  class="My First cep"
+                  placeholder="cep"
+                  autofocus
+                />
+
+                <label for="Complemento">Complemento :</label>
+                <input
+                  type="text"
+                  id="task-complemento"
+                  class="form-control mb-4"
+                  class="My First Complemento"
+                  placeholder="Complemento"
+                  autofocus
+                />
+
+                <button class="btn btn-primary" id="btn-task-form">Salvar</button>
               </form>
             </div>
           </div>
