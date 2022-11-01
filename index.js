@@ -30,6 +30,8 @@ import {
       <p>${task.nome}</p>
       <p>${task.sexo}</p>
       <p>${task.email}</p>
+      <p>${task.cpf}</p>
+      <p>${task.rg}</p>
       <p>${task.telefone}</p>
       <p>${task.endereco}</p>
       <p>${task.numero}</p>
@@ -66,6 +68,8 @@ import {
             taskForm["task-nome"].value = task.nome;
             taskForm["task-sexo"].value = task.sexo;
             taskForm["task-email"].value = task.email;
+            taskForm["task-cpf"].value = task.cpf;
+            taskForm["task-rg"].value = task.rg;
             taskForm["task-telefone"].value = task.telefone;
             taskForm["task-endereco"].value = task.endereco;
             taskForm["task-numero"].value = task.numero;
@@ -89,6 +93,8 @@ import {
     const nome = taskForm["task-nome"];
     const sexo = taskForm["task-sexo"];
     const email = taskForm["task-email"]
+    const cpf = taskForm["task-cpf"]
+    const rg = taskForm["task-rg"]
     const telefone = taskForm["task-telefone"]
     const endereco = taskForm["task-endereco"]
     const numero = taskForm["task-numero"]
@@ -97,12 +103,14 @@ import {
   
     try {
       if (!editStatus) {
-        await saveTask(nome.value,sexo.value,email.value,telefone.value,endereco.value,numero.value,cep.value,complemento.value);
+        await saveTask(nome.value,sexo.value,email.value,cpf.value,rg.value,telefone.value,endereco.value,numero.value,cep.value,complemento.value);
       } else {
         await updateTask(id, {
           nome: nome.value,
           sexo: sexo.value,
           email: email.value,
+          cpf: cpf.value,
+          rg: rg.value,
           telefone: telefone.value,
           endereco: endereco.value,
           numero: numero.value,
