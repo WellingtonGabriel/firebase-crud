@@ -36,6 +36,9 @@ import {
       <p>${task.endereco}</p>
       <p>${task.numero}</p>
       <p>${task.cep}</p>
+      <p>${task.bairro}</p>
+      <p>${task.cidade}</p>
+      <p>${task.uf}</p>
       <p>${task.complemento}</p>
       <div>
         <button class="btn btn-primary btn-delete" data-id="${doc.id}">
@@ -74,6 +77,9 @@ import {
             taskForm["task-endereco"].value = task.endereco;
             taskForm["task-numero"].value = task.numero;
             taskForm["task-cep"].value = task.cep;
+            taskForm["task-bairro"].value = task.bairro;
+            taskForm["task-cidade"].value = task.cidade;
+            taskForm["task-uf"].value = task.uf;
             taskForm["task-complemento"].value = task.complemento;
   
             editStatus = true;
@@ -99,11 +105,14 @@ import {
     const endereco = taskForm["task-endereco"]
     const numero = taskForm["task-numero"]
     const cep = taskForm["task-cep"]
+    const bairro = taskForm["task-bairro"]
+    const cidade = taskForm["task-cidade"]
+    const uf = taskForm["task-uf"]
     const complemento = taskForm["task-complemento"]
   
     try {
       if (!editStatus) {
-        await saveTask(nome.value,sexo.value,email.value,cpf.value,rg.value,telefone.value,endereco.value,numero.value,cep.value,complemento.value);
+        await saveTask(nome.value,sexo.value,email.value,cpf.value,rg.value,telefone.value,endereco.value,numero.value,cep.value,bairro.value,cidade.value,uf.value,complemento.value);
       } else {
         await updateTask(id, {
           nome: nome.value,
@@ -115,6 +124,9 @@ import {
           endereco: endereco.value,
           numero: numero.value,
           cep: cep.value,
+          bairro: bairro.value,
+          cidade: cidade.value,
+          uf: uf.value,
           complemento: complemento.value,
         });
   
