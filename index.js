@@ -24,22 +24,22 @@ import {
   
       querySnapshot.forEach((doc) => {
         const task = doc.data();
-  
+
         tasksContainer.innerHTML += `
         <div class="card card-body mt-2 border-primary">
-      <p>${task.nome}</p>
-      <p>${task.sexo}</p>
-      <p>${task.email}</p>
-      <p>${task.cpf}</p>
-      <p>${task.rg}</p>
-      <p>${task.telefone}</p>
-      <p>${task.endereco}</p>
-      <p>${task.numero}</p>
-      <p>${task.cep}</p>
-      <p>${task.bairro}</p>
-      <p>${task.cidade}</p>
-      <p>${task.uf}</p>
-      <p>${task.complemento}</p>
+      <label>Nome :</label> <p>${task.nome}</p>
+      <label>Sexo :</label> <p>${task.sexo}</p>
+      <label>E-mail :</label> <p>${task.email}</p>
+      <label>CPF :</label> <p>${task.cpf}</p>
+      <label>RG :</label> <p>${task.rg}</p>
+      <label>Telefone :</label> <p>${task.telefone}</p>
+      <label>Endereço :</label> <p>${task.endereco}</p>
+      <label>Numero :</label> <p>${task.numero}</p>
+      <label>CEP :</label> <p>${task.cep}</p>
+      <label>Bairro :</label> <p>${task.bairro}</p>
+      <label>Cidade :</label> <p>${task.cidade}</p>
+      <label>UF :</label> <p>${task.uf}</p>
+      <label>Complemento :</label> <p>${task.complemento}</p>
       <div>
         <button class="btn btn-primary btn-delete" data-id="${doc.id}">
           🗑 Deletar
